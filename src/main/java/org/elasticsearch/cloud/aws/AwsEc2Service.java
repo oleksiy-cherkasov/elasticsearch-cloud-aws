@@ -109,26 +109,52 @@ public class AwsEc2Service extends AbstractLifecycleComponent<AwsEc2Service> {
         } else if (componentSettings.get("region") != null) {
             String region = componentSettings.get("region").toLowerCase();
             String endpoint;
-            if (region.equals("us-east-1") || region.equals("us-east")) {
+            if (region.equals("us-east") || region.equals("us-east-1")) {
                 endpoint = "ec2.us-east-1.amazonaws.com";
+            } else if (region.equals("us-east-2")) {
+                endpoint = "ec2.us-east-2.amazonaws.com";
             } else if (region.equals("us-west") || region.equals("us-west-1")) {
                 endpoint = "ec2.us-west-1.amazonaws.com";
             } else if (region.equals("us-west-2")) {
                 endpoint = "ec2.us-west-2.amazonaws.com";
+            } else if (region.equals("ap-east") || region.equals("ap-east-1")) {
+                endpoint = "ec2.ap-east-1.amazonaws.com";
+            } else if (region.equals("ap-south") || region.equals("ap-south-1")) {
+                endpoint = "ec2.ap-south-1.amazonaws.com";
             } else if (region.equals("ap-southeast") || region.equals("ap-southeast-1")) {
                 endpoint = "ec2.ap-southeast-1.amazonaws.com";
             } else if (region.equals("ap-southeast-2")) {
                 endpoint = "ec2.ap-southeast-2.amazonaws.com";
             } else if (region.equals("ap-northeast") || region.equals("ap-northeast-1")) {
                 endpoint = "ec2.ap-northeast-1.amazonaws.com";
+            } else if (region.equals("ap-northeast-2")) {
+                endpoint = "ec2.ap-northeast-2.amazonaws.com";
+            } else if (region.equals("ap-northeast-3")) {
+                endpoint = "ec2.ap-northeast-3.amazonaws.com";
             } else if (region.equals("eu-west") || region.equals("eu-west-1")) {
                 endpoint = "ec2.eu-west-1.amazonaws.com";
+            } else if (region.equals("eu-west-2")) {
+                endpoint = "ec2.eu-west-2.amazonaws.com";
+            } else if (region.equals("eu-west-3")) {
+                endpoint = "ec2.eu-west-3.amazonaws.com";
             } else if (region.equals("eu-central") || region.equals("eu-central-1")) {
                 endpoint = "ec2.eu-central-1.amazonaws.com";
+            } else if (region.equals("eu-north") || region.equals("eu-north-1")) {
+                endpoint = "ec2.eu-north-1.amazonaws.com";
+            } else if (region.equals("me-south") || region.equals("me-south-1")) {
+                endpoint = "ec2.me-south-1.amazonaws.com";
             } else if (region.equals("sa-east") || region.equals("sa-east-1")) {
                 endpoint = "ec2.sa-east-1.amazonaws.com";
             } else if (region.equals("cn-north") || region.equals("cn-north-1")) {
                 endpoint = "ec2.cn-north-1.amazonaws.com.cn";
+            } else if (region.equals("cn-northwest") || region.equals("cn-northwest-1")) {
+                endpoint = "ec2.cn-northwest-1.amazonaws.com.cn";
+            } else if (region.equals("ca-central") || region.equals("ca-central-1")) {
+                endpoint = "ec2.ca-central-1.amazonaws.com";
+            } else if (region.equals("us-gov-east") || region.equals("us-gov-east-1")) {
+                endpoint = "ec2.us-gov-east-1.amazonaws.com";
+            } else if (region.equals("us-gov-west") || region.equals("us-gov-west-1")) {
+                endpoint = "ec2.us-gov-west-1.amazonaws.com";
             } else {
                 throw new ElasticsearchIllegalArgumentException("No automatic endpoint could be derived from region [" + region + "]");
             }
