@@ -91,24 +91,46 @@ public class S3Repository extends BlobStoreRepository {
                 if ("us-east".equals(regionSetting) || "us-east-1".equals(regionSetting)) {
                     // Default bucket - setting region to null
                     region = null;
+                } else if ("us-east-2".equals(regionSetting)) {
+                   region = "us-east-2";
                 } else if ("us-west".equals(regionSetting) || "us-west-1".equals(regionSetting)) {
                     region = "us-west-1";
                 } else if ("us-west-2".equals(regionSetting)) {
                     region = "us-west-2";
+                } else if ("ap-east".equals(regionSetting) || "ap-east-1".equals(regionSetting)) {
+                    region = "ap-east-1";
+                } else if ("ap-south".equals(regionSetting) || "ap-south-1".equals(regionSetting)) {
+                    region = "ap-south-1";
                 } else if ("ap-southeast".equals(regionSetting) || "ap-southeast-1".equals(regionSetting)) {
                     region = "ap-southeast-1";
                 } else if ("ap-southeast-2".equals(regionSetting)) {
                     region = "ap-southeast-2";
                 } else if ("ap-northeast".equals(regionSetting) || "ap-northeast-1".equals(regionSetting)) {
                     region = "ap-northeast-1";
+                } else if ("ap-northeast-2".equals(regionSetting)) {
+                    region = "ap-northeast-2";
+                } else if ("ap-northeast-3".equals(regionSetting)) {
+                    region = "ap-northeast-3";
                 } else if ("eu-west".equals(regionSetting) || "eu-west-1".equals(regionSetting)) {
                     region = "eu-west-1";
+                } else if ("eu-west-2".equals(regionSetting)) {
+                    region = "eu-west-2";
+                } else if ("eu-west-3".equals(regionSetting)) {
+                    region = "eu-west-3";
                 } else if ("eu-central".equals(regionSetting) || "eu-central-1".equals(regionSetting)) {
                     region = "eu-central-1";
+                } else if ("eu-north".equals(regionSetting) || "eu-north-1".equals(regionSetting)) {
+                    region = "eu-north-1";
+                } else if ("me-south".equals(regionSetting) || "me-south-1".equals(regionSetting)) {
+                    region = "me-south-1";
                 } else if ("sa-east".equals(regionSetting) || "sa-east-1".equals(regionSetting)) {
                     region = "sa-east-1";
                 } else if ("cn-north".equals(regionSetting) || "cn-north-1".equals(regionSetting)) {
                     region = "cn-north-1";
+                } else if ("cn-northwest".equals(regionSetting) || "cn-northwest-1".equals(regionSetting)) {
+                    region = "cn-northwest-1";
+                } else if ("ca-central".equals(regionSetting) || "ca-central-1".equals(regionSetting)) {
+                    region = "ca-central-1";
                 }
             }
         }
